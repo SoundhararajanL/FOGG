@@ -1,0 +1,192 @@
+body {
+    background: linear-gradient(to right, #00264D, #00498D);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.body-black {
+    background: linear-gradient(to right, #000000, #4c4e50);
+    transition: background-color 0.7s linear;
+    overflow: hidden;
+}
+
+.body-red {
+    background: linear-gradient(to right, #e90707, #d36e5c);
+    transition: background-color 0.7s linear;
+    overflow: hidden;
+}
+.product-image {
+    margin-top: -30ch;
+    width: auto;
+    height: 50ch;
+    rotate: -20deg;
+    animation: slide-image-left 0.5s ease; /* Use a separate keyframes animation */
+}
+
+.product-image.hidden {
+    opacity: 0; 
+}
+
+.product-image-black {
+    margin-top: -30ch;
+    width: auto;
+    height: 50ch;
+    rotate: -20deg;
+    animation: slide-image-left 0.5s ease; /* Use a separate keyframes animation */
+}
+
+.product-image-red {
+    margin-top: -30ch;
+    width: auto;
+    height: 50ch;
+    rotate: -20deg;
+    animation: slide-image-left 0.5s ease; /* Use a separate keyframes animation */
+}
+
+@keyframes slide-image-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.circle {
+    background: #00498D;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: -20ch;
+}
+
+.circle-black {
+    background: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: -20ch;
+}
+
+.circle-red {
+    background: rgb(255, 0, 0);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: -20ch;
+}
+
+.tick {
+    width: 14px;
+    height: 7px;
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+    transform: rotate(-45deg);
+}
+
+.header {
+    font-size: 20ch;
+    margin-bottom: 0%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0%;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.left-text {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    margin-top: -20ch;
+    text-align: center;
+    color: white;
+    font-size: 1.5ch;
+    padding: 20px;
+    width: 20%;
+    animation: slide-left 0.8s ease; /* Changed to slide-left */
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-100%); /* Start from the left */
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.left-text p {
+    margin: 0;
+}
+
+.left-text h1 {
+    margin: 0;
+}
+
+.left-text .price {
+    font-size: 6ch;
+    font-weight: bold;
+    color: #00FE00;
+}
+
+.left-text.hidden {
+    opacity: 0; 
+}
+
+.right-text {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    margin-top: -20ch;
+    text-align: center;
+    color: white;
+    font-size: 1.5ch;
+    padding: 20px;
+    width: 20%;
+    animation: slide-right 0.8s ease; /* Changed to slide-right */
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(100%); /* Start from the right */
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.right-text p {
+    font-weight: bold;
+    font-size: 2ch;
+}
