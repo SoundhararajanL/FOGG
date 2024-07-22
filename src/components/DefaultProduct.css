@@ -19,32 +19,26 @@ body {
     transition: background-color 0.7s linear;
     overflow: hidden;
 }
+
 .product-image {
     margin-top: -30ch;
     width: auto;
     height: 50ch;
     rotate: -20deg;
-    animation: slide-image-left 0.5s ease; /* Use a separate keyframes animation */
+    animation: slide-image-left 0.5s ease;
 }
 
 .product-image.hidden {
-    opacity: 0; 
+    opacity: 0;
 }
 
-.product-image-black {
-    margin-top: -30ch;
-    width: auto;
-    height: 50ch;
-    rotate: -20deg;
-    animation: slide-image-left 0.5s ease; /* Use a separate keyframes animation */
-}
-
+.product-image-black,
 .product-image-red {
     margin-top: -30ch;
     width: auto;
     height: 50ch;
     rotate: -20deg;
-    animation: slide-image-left 0.5s ease; /* Use a separate keyframes animation */
+    animation: slide-image-left 0.5s ease;
 }
 
 @keyframes slide-image-left {
@@ -56,8 +50,9 @@ body {
     }
 }
 
-.circle {
-    background: #00498D;
+.circle,
+.circle-black,
+.circle-red {
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -67,32 +62,18 @@ body {
     align-items: center;
     position: relative;
     margin-top: -20ch;
+}
+
+.circle {
+    background: #00498D;
 }
 
 .circle-black {
     background: black;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-top: -20ch;
 }
 
 .circle-red {
     background: rgb(255, 0, 0);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-top: -20ch;
 }
 
 .tick {
@@ -105,10 +86,10 @@ body {
 
 .header {
     font-size: 20ch;
-    margin-bottom: 0%;
+    margin-bottom: 0;
     text-align: center;
     padding: 20px;
-    margin-top: 0%;
+    margin-top: 0;
     color: aliceblue;
     font-weight: bold;
 }
@@ -124,32 +105,48 @@ body {
     width: 100%;
 }
 
-.left-text {
+.left-text,
+.right-text {
     position: fixed;
-    left: 0;
     top: 50%;
-    margin-top: -20ch;
     text-align: center;
     color: white;
     font-size: 1.5ch;
     padding: 20px;
     width: 20%;
-    animation: slide-left 0.8s ease; /* Changed to slide-left */
+    animation: slide-left 0.8s ease;
+}
+
+.left-text {
+    left: 0;
+    margin-top: -20ch;
+}
+
+.right-text {
+    right: 0;
+    margin-top: -20ch;
+    animation: slide-right 0.8s ease;
 }
 
 @keyframes slide-left {
     from {
-        transform: translateX(-100%); /* Start from the left */
+        transform: translateX(-100%);
     }
     to {
         transform: translateX(0%);
     }
 }
 
-.left-text p {
-    margin: 0;
+@keyframes slide-right {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
 }
 
+.left-text p,
 .left-text h1 {
     margin: 0;
 }
@@ -160,33 +157,88 @@ body {
     color: #00FE00;
 }
 
-.left-text.hidden {
-    opacity: 0; 
-}
-
-.right-text {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    margin-top: -20ch;
-    text-align: center;
-    color: white;
-    font-size: 1.5ch;
-    padding: 20px;
-    width: 20%;
-    animation: slide-right 0.8s ease; /* Changed to slide-right */
-}
-
-@keyframes slide-right {
-    from {
-        transform: translateX(100%); /* Start from the right */
-    }
-    to {
-        transform: translateX(0%);
-    }
+.left-text.hidden,
+.right-text.hidden {
+    opacity: 0;
 }
 
 .right-text p {
     font-weight: bold;
     font-size: 2ch;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .header {
+        font-size: 10ch;
+    }
+    .product-image, .product-image-black, .product-image-red {
+        height: 40ch;
+    }
+    .left-text, .right-text {
+        font-size: 1.2ch;
+    }
+    .left-text .price {
+        font-size: 4ch;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 8ch;
+    }
+    .product-image, .product-image-black, .product-image-red {
+        height: 30ch;
+    }
+    .circle, .circle-black, .circle-red {
+        width: 40px;
+        height: 40px;
+    }
+    .left-text, .right-text {
+        font-size: 1ch;
+    }
+    .left-text .price {
+        font-size: 3ch;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 17ch;
+    }
+    .product-image, .product-image-black, .product-image-red {
+        height: 47ch;
+    }
+    .circle, .circle-black, .circle-red {
+        width: 30px;
+        height: 30px;
+    }
+    .left-text, .right-text {
+        font-size: 0.8ch;
+        padding: 10px;
+        width: 90%;
+        position: static;
+        margin: 20px auto;
+        animation: none;
+    }
+    .left-text .price {
+        font-size: 2ch;
+    }
+    .footer {
+        flex-direction: row; /* Align circles horizontally */
+        flex-wrap: wrap; /* Allow circles to wrap to next line if needed */
+        justify-content: center; /* Center the circles horizontally */
+    }
+}
+
+/* Ensure circles are aligned horizontally in all views */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
 }

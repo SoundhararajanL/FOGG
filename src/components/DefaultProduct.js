@@ -102,22 +102,21 @@ const DefaultProduct = () => {
               <h1 className="price">₹146.67</h1> <span>per ml</span>
             </div>
           </div>
-         
         </div>
       )}
-      {animateTextBlackRight &&
-      ( <div className='right-text'>
-       <p>Brand: FOGG</p>
-       <p>Item Form: Spray</p>
-       <p>Scent: Marco</p>
-       <p>Material Type Free: No Gas</p>
-       <p>Special Feature: Long Lasting</p>
-       <p>Material Feature: Natural</p>
-       <p>Net Quantity: 150.0 Millilitre</p>
-       <p>Item Volume: 150 Millilitres</p>
-       <p>Use For: Whole Body</p>
-     </div>)
-      }
+      {animateTextBlackRight && (
+        <div className='right-text'>
+          <p>Brand: FOGG</p>
+          <p>Item Form: Spray</p>
+          <p>Scent: Marco</p>
+          <p>Material Type Free: No Gas</p>
+          <p>Special Feature: Long Lasting</p>
+          <p>Material Feature: Natural</p>
+          <p>Net Quantity: 150.0 Millilitre</p>
+          <p>Item Volume: 150 Millilitres</p>
+          <p>Use For: Whole Body</p>
+        </div>
+      )}
 
       {animateTextBlue && !animateTextBlack && !animateTextRed && (
         <div className='left-text'>
@@ -129,24 +128,22 @@ const DefaultProduct = () => {
               <h1 className="price">₹146.67</h1> <span>per ml</span>
             </div>
           </div>
-         
         </div>
       )}
-      {
-        animateTextBlueRight && !animateTextBlackRight && !animateTextRedRight && 
-      (  <div className='right-text'>
-        <p>Brand: FOGG</p>
-        <p>Item Form: Spray</p>
-        <p>Scent: Marco</p>
-        <p>Material Type Free: No Gas</p>
-        <p>Special Feature: Long Lasting</p>
-        <p>Material Feature: Natural</p>
-        <p>Net Quantity: 150.0 Millilitre</p>
-        <p>Item Volume: 150 Millilitres</p>
-        <p>Use For: Whole Body</p>
-      </div>)
-      }
-      
+      {animateTextBlueRight && !animateTextBlackRight && !animateTextRedRight && (
+        <div className='right-text'>
+          <p>Brand: FOGG</p>
+          <p>Item Form: Spray</p>
+          <p>Scent: Marco</p>
+          <p>Material Type Free: No Gas</p>
+          <p>Special Feature: Long Lasting</p>
+          <p>Material Feature: Natural</p>
+          <p>Net Quantity: 150.0 Millilitre</p>
+          <p>Item Volume: 150 Millilitres</p>
+          <p>Use For: Whole Body</p>
+        </div>
+      )}
+
       {animateTextRed && (
         <div className='left-text'>
           <h3>Fogg Marco No Gas Deodorant for Men, Long-Lasting Perfume Body Spray, 150 ml</h3>
@@ -157,24 +154,21 @@ const DefaultProduct = () => {
               <h1 className="price">₹146.67</h1> <span>per ml</span>
             </div>
           </div>
-         
         </div>
       )}
-      { animateTextRedRight && (
-         <div className='right-text'>
-            <p>Brand: FOGG</p>
-            <p>Item Form: Spray</p>
-            <p>Scent: Marco</p>
-            <p>Material Type Free: No Gas</p>
-            <p>Special Feature: Long Lasting</p>
-            <p>Material Feature: Natural</p>
-            <p>Net Quantity: 150.0 Millilitre</p>
-            <p>Item Volume: 150 Millilitres</p>
-            <p>Use For: Whole Body</p>
-          </div>
-      )
-
-      }
+      {animateTextRedRight && (
+        <div className='right-text'>
+          <p>Brand: FOGG</p>
+          <p>Item Form: Spray</p>
+          <p>Scent: Marco</p>
+          <p>Material Type Free: No Gas</p>
+          <p>Special Feature: Long Lasting</p>
+          <p>Material Feature: Natural</p>
+          <p>Net Quantity: 150.0 Millilitre</p>
+          <p>Item Volume: 150 Millilitres</p>
+          <p>Use For: Whole Body</p>
+        </div>
+      )}
     </section>
   );
 }
