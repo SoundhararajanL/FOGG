@@ -242,3 +242,19 @@ body {
     transform: translateX(-50%);
     position: absolute;
 }
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #00264D, #00498D);
+    color: white;
+    font-size: 2ch;
+    text-align: center;
+}
+
+.loader-message {
+    margin-top: 20px;
+}

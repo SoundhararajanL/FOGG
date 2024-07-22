@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DefaultProduct.css';
 import Blue from "../Products/Product-Blue.webp";
 import Black from "../Products/Product-Black.webp";
 import Red from "../Products/Product-Red.webp";
+import 'ldrs/hourglass'; // Import the loader component
+import 'ldrs/ring';
 
 const DefaultProduct = () => {
+  const [loading, setLoading] = useState(true);
   const [showBlack, setShowBlack] = useState(false);
   const [showRed, setShowRed] = useState(false);
   const [tickBlack, setTickBlack] = useState(false);
@@ -16,6 +19,14 @@ const DefaultProduct = () => {
   const [animateTextBlueRight, setAnimateTextBlueRight] = useState(true);
   const [animateTextBlackRight, setAnimateTextBlackRight] = useState(false);
   const [animateTextRedRight, setAnimateTextRedRight] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate loading time of 2 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleCircleClickBlack = () => {
     setShowBlack(true);
@@ -63,6 +74,15 @@ const DefaultProduct = () => {
     setAnimateTextBlueRight(true);
     document.body.classList.remove('body-black', 'body-red');
   };
+
+  if (loading) {
+    return (
+      <div className="loader-container">
+        <l-hourglass size="40" bg-opacity="0.1" speed="1.75" color="black"></l-hourglass>
+        <div className="loader-message">This page is developed for desktop view only</div>
+      </div>
+    );
+  }
 
   return (
     <section>
